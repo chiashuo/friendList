@@ -35,11 +35,14 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
-#pragma mark - TableView Delegate
+
+#pragma mark - UITableViewDelegate
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
+
+#pragma mark - UITableViewDataSource
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     
