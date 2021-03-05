@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046130E225F212D90093A602 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046130E125F212D90093A602 /* Color.xcassets */; };
+		046130E825F213490093A602 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 046130E725F213490093A602 /* UIColor+HexString.m */; };
+		046130F025F2274D0093A602 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 046130EF25F2274D0093A602 /* User.m */; };
+		0461310725F22ED70093A602 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461310625F22ED70093A602 /* Friend.m */; };
+		0480209825F1DA2E008C6F8A /* NSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480209725F1DA2E008C6F8A /* NSArray+Utils.m */; };
+		048020A025F1DDF0008C6F8A /* NetworkProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480209F25F1DDF0008C6F8A /* NetworkProvider.m */; };
 		0489C64A25F0DB410060E2CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C64925F0DB410060E2CC /* AppDelegate.m */; };
 		0489C64D25F0DB410060E2CC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C64C25F0DB410060E2CC /* SceneDelegate.m */; };
 		0489C65325F0DB410060E2CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489C65125F0DB410060E2CC /* Main.storyboard */; };
@@ -41,6 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		046130E125F212D90093A602 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		046130E625F213490093A602 /* UIColor+HexString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		046130E725F213490093A602 /* UIColor+HexString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		046130EE25F2274D0093A602 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		046130EF25F2274D0093A602 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		046130F725F229DB0093A602 /* UtilDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilDefine.h; sourceTree = "<group>"; };
+		046130F825F22CD80093A602 /* FriendList-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FriendList-Prefix.pch"; sourceTree = "<group>"; };
+		0461310525F22ED70093A602 /* Friend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		0461310625F22ED70093A602 /* Friend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		0480209625F1DA2E008C6F8A /* NSArray+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Utils.h"; sourceTree = "<group>"; };
+		0480209725F1DA2E008C6F8A /* NSArray+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Utils.m"; sourceTree = "<group>"; };
+		0480209E25F1DDF0008C6F8A /* NetworkProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkProvider.h; sourceTree = "<group>"; };
+		0480209F25F1DDF0008C6F8A /* NetworkProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkProvider.m; sourceTree = "<group>"; };
 		0489C64525F0DB410060E2CC /* FriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0489C64825F0DB410060E2CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0489C64925F0DB410060E2CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +114,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046130EC25F21B000093A602 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				046130ED25F227410093A602 /* Model */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		046130ED25F227410093A602 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				046130EE25F2274D0093A602 /* User.h */,
+				046130EF25F2274D0093A602 /* User.m */,
+				0461310525F22ED70093A602 /* Friend.h */,
+				0461310625F22ED70093A602 /* Friend.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0480208925F1D9CA008C6F8A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0480209625F1DA2E008C6F8A /* NSArray+Utils.h */,
+				0480209725F1DA2E008C6F8A /* NSArray+Utils.m */,
+				046130E625F213490093A602 /* UIColor+HexString.h */,
+				046130E725F213490093A602 /* UIColor+HexString.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		0480209C25F1DA9F008C6F8A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0489C68125F0DBDE0060E2CC /* BaseViewController.h */,
+				0489C68225F0DBDE0060E2CC /* BaseViewController.m */,
+				0489C68A25F0DE0E0060E2CC /* BaseNavigationController.h */,
+				0489C68B25F0DE0E0060E2CC /* BaseNavigationController.m */,
+				0489C69025F0E1400060E2CC /* BaseTableViewController.h */,
+				0489C69125F0E1400060E2CC /* BaseTableViewController.m */,
+				0489C69225F0E1400060E2CC /* BasePlainTableViewController.xib */,
+				0489C69825F0E17E0060E2CC /* BaseGroupTableViewController.xib */,
+				0489C6B725F0ECAE0060E2CC /* TabBarViewController.h */,
+				0489C6B825F0ECAE0060E2CC /* TabBarViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0480209D25F1DB2E008C6F8A /* NetworkProvider */ = {
+			isa = PBXGroup;
+			children = (
+				0480209E25F1DDF0008C6F8A /* NetworkProvider.h */,
+				0480209F25F1DDF0008C6F8A /* NetworkProvider.m */,
+			);
+			path = NetworkProvider;
+			sourceTree = "<group>";
+		};
 		0489C63C25F0DB410060E2CC = {
 			isa = PBXGroup;
 			children = (
@@ -119,13 +194,17 @@
 			isa = PBXGroup;
 			children = (
 				0489C68025F0DBAC0060E2CC /* SharedClass */,
+				0480208925F1D9CA008C6F8A /* Category */,
+				046130EC25F21B000093A602 /* Friend */,
 				0489C64825F0DB410060E2CC /* AppDelegate.h */,
 				0489C64925F0DB410060E2CC /* AppDelegate.m */,
 				0489C64B25F0DB410060E2CC /* SceneDelegate.h */,
 				0489C64C25F0DB410060E2CC /* SceneDelegate.m */,
 				0489C65125F0DB410060E2CC /* Main.storyboard */,
 				0489C65425F0DB430060E2CC /* Assets.xcassets */,
+				046130E125F212D90093A602 /* Color.xcassets */,
 				0489C65625F0DB430060E2CC /* LaunchScreen.storyboard */,
+				046130F825F22CD80093A602 /* FriendList-Prefix.pch */,
 				0489C65925F0DB430060E2CC /* Info.plist */,
 				0489C65A25F0DB430060E2CC /* main.m */,
 			);
@@ -153,17 +232,10 @@
 		0489C68025F0DBAC0060E2CC /* SharedClass */ = {
 			isa = PBXGroup;
 			children = (
+				0480209D25F1DB2E008C6F8A /* NetworkProvider */,
+				0480209C25F1DA9F008C6F8A /* ViewController */,
 				0489C6A825F0E57D0060E2CC /* Configure.h */,
-				0489C68125F0DBDE0060E2CC /* BaseViewController.h */,
-				0489C68225F0DBDE0060E2CC /* BaseViewController.m */,
-				0489C68A25F0DE0E0060E2CC /* BaseNavigationController.h */,
-				0489C68B25F0DE0E0060E2CC /* BaseNavigationController.m */,
-				0489C69025F0E1400060E2CC /* BaseTableViewController.h */,
-				0489C69125F0E1400060E2CC /* BaseTableViewController.m */,
-				0489C69225F0E1400060E2CC /* BasePlainTableViewController.xib */,
-				0489C69825F0E17E0060E2CC /* BaseGroupTableViewController.xib */,
-				0489C6B725F0ECAE0060E2CC /* TabBarViewController.h */,
-				0489C6B825F0ECAE0060E2CC /* TabBarViewController.m */,
+				046130F725F229DB0093A602 /* UtilDefine.h */,
 			);
 			name = SharedClass;
 			path = FriendList/SharedClass;
@@ -276,6 +348,7 @@
 				0489C65525F0DB430060E2CC /* Assets.xcassets in Resources */,
 				0489C69425F0E1400060E2CC /* BasePlainTableViewController.xib in Resources */,
 				0489C65325F0DB410060E2CC /* Main.storyboard in Resources */,
+				046130E225F212D90093A602 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,12 +373,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046130E825F213490093A602 /* UIColor+HexString.m in Sources */,
 				0489C68325F0DBDE0060E2CC /* BaseViewController.m in Sources */,
 				0489C68C25F0DE0E0060E2CC /* BaseNavigationController.m in Sources */,
+				0461310725F22ED70093A602 /* Friend.m in Sources */,
 				0489C69325F0E1400060E2CC /* BaseTableViewController.m in Sources */,
 				0489C6B925F0ECAE0060E2CC /* TabBarViewController.m in Sources */,
+				048020A025F1DDF0008C6F8A /* NetworkProvider.m in Sources */,
+				046130F025F2274D0093A602 /* User.m in Sources */,
 				0489C64A25F0DB410060E2CC /* AppDelegate.m in Sources */,
 				0489C65B25F0DB430060E2CC /* main.m in Sources */,
+				0480209825F1DA2E008C6F8A /* NSArray+Utils.m in Sources */,
 				0489C64D25F0DB410060E2CC /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +557,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6FK93KRVZ8;
+				GCC_PREFIX_HEADER = "FriendList/FriendList-Prefix.pch";
 				INFOPLIST_FILE = FriendList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,6 +576,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6FK93KRVZ8;
+				GCC_PREFIX_HEADER = "FriendList/FriendList-Prefix.pch";
 				INFOPLIST_FILE = FriendList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

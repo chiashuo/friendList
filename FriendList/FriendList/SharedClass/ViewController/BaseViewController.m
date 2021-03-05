@@ -34,6 +34,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    [self.navigationController.navigationBar setHidden:YES];
 }
 #pragma mark - Orientation methods
 
