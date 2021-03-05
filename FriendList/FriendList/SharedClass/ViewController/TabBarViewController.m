@@ -9,6 +9,7 @@
 #import "BaseNavigationController.h"
 #import "BaseViewController.h"
 #import "UIColor+HexString.h"
+#import "FriendListViewController.h"
 
 typedef NS_ENUM(NSInteger, MainTabBarItemTag) {
     
@@ -52,7 +53,7 @@ typedef NS_ENUM(NSInteger, MainTabBarItemTag) {
     [moneyVC.tabBarItem setImage:moneyImage];
     [moneyVC.tabBarItem setSelectedImage:moneyImage];
     
-    BaseViewController *friendVC = [[BaseViewController alloc] init];
+    FriendListViewController *friendVC = [[FriendListViewController alloc] initWithNibName:@"FriendListViewController" bundle:nil];
     friendVC.title = @"朋友";
     BaseNavigationController *navFriend = [[BaseNavigationController alloc] initWithRootViewController:friendVC];
     UIImage *friendImage = [[UIImage imageNamed:@"icTabbarFriendsOn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

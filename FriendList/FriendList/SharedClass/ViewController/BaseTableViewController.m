@@ -9,14 +9,13 @@
 
 @interface BaseTableViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @end
 
 @implementation BaseTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTableView];
     // Do any additional setup after loading the view from its nib.
 }
 

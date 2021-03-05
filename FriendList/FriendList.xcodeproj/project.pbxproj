@@ -27,6 +27,15 @@
 		0489C69425F0E1400060E2CC /* BasePlainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0489C69225F0E1400060E2CC /* BasePlainTableViewController.xib */; };
 		0489C69925F0E17E0060E2CC /* BaseGroupTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0489C69825F0E17E0060E2CC /* BaseGroupTableViewController.xib */; };
 		0489C6B925F0ECAE0060E2CC /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C6B825F0ECAE0060E2CC /* TabBarViewController.m */; };
+		22755A2025F267FB0059B5D6 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22755A1E25F267FB0059B5D6 /* FriendListViewController.m */; };
+		22755A2125F267FB0059B5D6 /* FriendListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22755A1F25F267FB0059B5D6 /* FriendListViewController.xib */; };
+		22755A2B25F277200059B5D6 /* FriendSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22755A2A25F277200059B5D6 /* FriendSearchView.m */; };
+		22755A3025F2772A0059B5D6 /* FriendSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22755A2F25F2772A0059B5D6 /* FriendSearchView.xib */; };
+		22755A3F25F27ED70059B5D6 /* UIColor+KOKOColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22755A3E25F27ED70059B5D6 /* UIColor+KOKOColor.m */; };
+		22755A4C25F286770059B5D6 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22755A4A25F286770059B5D6 /* FriendTableViewCell.m */; };
+		22755A4D25F286770059B5D6 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22755A4B25F286770059B5D6 /* FriendTableViewCell.xib */; };
+		22755A5C25F28F5E0059B5D6 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22755A5B25F28F5E0059B5D6 /* UIView+Utils.m */; };
+		22755A6B25F291160059B5D6 /* UITableViewCell+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22755A6A25F291160059B5D6 /* UITableViewCell+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +96,21 @@
 		0489C6A825F0E57D0060E2CC /* Configure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Configure.h; sourceTree = "<group>"; };
 		0489C6B725F0ECAE0060E2CC /* TabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		0489C6B825F0ECAE0060E2CC /* TabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		22755A1D25F267FB0059B5D6 /* FriendListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendListViewController.h; sourceTree = "<group>"; };
+		22755A1E25F267FB0059B5D6 /* FriendListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
+		22755A1F25F267FB0059B5D6 /* FriendListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendListViewController.xib; sourceTree = "<group>"; };
+		22755A2925F277200059B5D6 /* FriendSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendSearchView.h; sourceTree = "<group>"; };
+		22755A2A25F277200059B5D6 /* FriendSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendSearchView.m; sourceTree = "<group>"; };
+		22755A2F25F2772A0059B5D6 /* FriendSearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendSearchView.xib; sourceTree = "<group>"; };
+		22755A3D25F27ED70059B5D6 /* UIColor+KOKOColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+KOKOColor.h"; sourceTree = "<group>"; };
+		22755A3E25F27ED70059B5D6 /* UIColor+KOKOColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KOKOColor.m"; sourceTree = "<group>"; };
+		22755A4925F286770059B5D6 /* FriendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
+		22755A4A25F286770059B5D6 /* FriendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCell.m; sourceTree = "<group>"; };
+		22755A4B25F286770059B5D6 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		22755A5A25F28F5E0059B5D6 /* UIView+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		22755A5B25F28F5E0059B5D6 /* UIView+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		22755A6925F291160059B5D6 /* UITableViewCell+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Utils.h"; sourceTree = "<group>"; };
+		22755A6A25F291160059B5D6 /* UITableViewCell+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +141,8 @@
 		046130EC25F21B000093A602 /* Friend */ = {
 			isa = PBXGroup;
 			children = (
+				22755A2825F277000059B5D6 /* View */,
+				22755A0F25F267BF0059B5D6 /* ViewController */,
 				046130ED25F227410093A602 /* Model */,
 			);
 			path = Friend;
@@ -140,6 +166,12 @@
 				0480209725F1DA2E008C6F8A /* NSArray+Utils.m */,
 				046130E625F213490093A602 /* UIColor+HexString.h */,
 				046130E725F213490093A602 /* UIColor+HexString.m */,
+				22755A3D25F27ED70059B5D6 /* UIColor+KOKOColor.h */,
+				22755A3E25F27ED70059B5D6 /* UIColor+KOKOColor.m */,
+				22755A5A25F28F5E0059B5D6 /* UIView+Utils.h */,
+				22755A5B25F28F5E0059B5D6 /* UIView+Utils.m */,
+				22755A6925F291160059B5D6 /* UITableViewCell+Utils.h */,
+				22755A6A25F291160059B5D6 /* UITableViewCell+Utils.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -241,6 +273,29 @@
 			path = FriendList/SharedClass;
 			sourceTree = SOURCE_ROOT;
 		};
+		22755A0F25F267BF0059B5D6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22755A1D25F267FB0059B5D6 /* FriendListViewController.h */,
+				22755A1E25F267FB0059B5D6 /* FriendListViewController.m */,
+				22755A1F25F267FB0059B5D6 /* FriendListViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		22755A2825F277000059B5D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22755A2925F277200059B5D6 /* FriendSearchView.h */,
+				22755A2A25F277200059B5D6 /* FriendSearchView.m */,
+				22755A2F25F2772A0059B5D6 /* FriendSearchView.xib */,
+				22755A4925F286770059B5D6 /* FriendTableViewCell.h */,
+				22755A4A25F286770059B5D6 /* FriendTableViewCell.m */,
+				22755A4B25F286770059B5D6 /* FriendTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,6 +362,7 @@
 				TargetAttributes = {
 					0489C64425F0DB410060E2CC = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1200;
 					};
 					0489C65F25F0DB430060E2CC = {
 						CreatedOnToolsVersion = 12.3;
@@ -345,9 +401,12 @@
 			files = (
 				0489C65825F0DB430060E2CC /* LaunchScreen.storyboard in Resources */,
 				0489C69925F0E17E0060E2CC /* BaseGroupTableViewController.xib in Resources */,
+				22755A2125F267FB0059B5D6 /* FriendListViewController.xib in Resources */,
 				0489C65525F0DB430060E2CC /* Assets.xcassets in Resources */,
 				0489C69425F0E1400060E2CC /* BasePlainTableViewController.xib in Resources */,
 				0489C65325F0DB410060E2CC /* Main.storyboard in Resources */,
+				22755A3025F2772A0059B5D6 /* FriendSearchView.xib in Resources */,
+				22755A4D25F286770059B5D6 /* FriendTableViewCell.xib in Resources */,
 				046130E225F212D90093A602 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,14 +434,20 @@
 			files = (
 				046130E825F213490093A602 /* UIColor+HexString.m in Sources */,
 				0489C68325F0DBDE0060E2CC /* BaseViewController.m in Sources */,
+				22755A2B25F277200059B5D6 /* FriendSearchView.m in Sources */,
+				22755A3F25F27ED70059B5D6 /* UIColor+KOKOColor.m in Sources */,
 				0489C68C25F0DE0E0060E2CC /* BaseNavigationController.m in Sources */,
+				22755A2025F267FB0059B5D6 /* FriendListViewController.m in Sources */,
 				0461310725F22ED70093A602 /* Friend.m in Sources */,
 				0489C69325F0E1400060E2CC /* BaseTableViewController.m in Sources */,
 				0489C6B925F0ECAE0060E2CC /* TabBarViewController.m in Sources */,
 				048020A025F1DDF0008C6F8A /* NetworkProvider.m in Sources */,
 				046130F025F2274D0093A602 /* User.m in Sources */,
+				22755A5C25F28F5E0059B5D6 /* UIView+Utils.m in Sources */,
+				22755A4C25F286770059B5D6 /* FriendTableViewCell.m in Sources */,
 				0489C64A25F0DB410060E2CC /* AppDelegate.m in Sources */,
 				0489C65B25F0DB430060E2CC /* main.m in Sources */,
+				22755A6B25F291160059B5D6 /* UITableViewCell+Utils.m in Sources */,
 				0480209825F1DA2E008C6F8A /* NSArray+Utils.m in Sources */,
 				0489C64D25F0DB410060E2CC /* SceneDelegate.m in Sources */,
 			);
@@ -556,17 +621,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6FK93KRVZ8;
 				GCC_PREFIX_HEADER = "FriendList/FriendList-Prefix.pch";
 				INFOPLIST_FILE = FriendList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccs.FriendList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -575,17 +644,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6FK93KRVZ8;
 				GCC_PREFIX_HEADER = "FriendList/FriendList-Prefix.pch";
 				INFOPLIST_FILE = FriendList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccs.FriendList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -595,7 +667,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FriendListTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,7 +686,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FriendListTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -632,6 +704,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FriendListUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,6 +722,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FriendListUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

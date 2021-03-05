@@ -11,4 +11,7 @@
 #define isNullValue(object)     (object == nil || [object isKindOfClass:[NSNull class]])
 #define isNotNullValue(object)  !isNullValue(object)
 
+#define kScreenWidth            ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight           ([UIScreen mainScreen].bounds.size.height)
+
 #endif /* UtilDefine_h */

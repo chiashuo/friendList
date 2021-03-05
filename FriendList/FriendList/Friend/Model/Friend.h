@@ -14,11 +14,7 @@ typedef NS_ENUM(NSInteger, FriendStatus) {
     
     FriendStatusCanTransfer,      //! 好友
     
-    TabBarItemTagKOKO,          //! KOKO
     
-    TabBarItemTagTrack,         //! 記帳
-    
-    TabBarItemTagSetting,       //! 設定
     
     TabBarItemTagUnKnow
 };

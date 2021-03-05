@@ -11,8 +11,11 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#import "UtilDefine.h"
 #import "NSArray+Utils.h"
 #import "UIColor+HexString.h"
-#import "UtilDefine.h"
+#import "UIColor+KOKOColor.h"
+#import "UIView+Utils.h"
+#import "UITableViewCell+Utils.h"
 
 #endif /* FriendList_Prefix_pch */
