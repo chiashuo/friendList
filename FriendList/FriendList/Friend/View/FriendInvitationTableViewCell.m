@@ -34,11 +34,19 @@
 #pragma mark - IBAction
 
 - (IBAction)deleteButtonDidPressed:(id)sender {
-    
+    if (isNotNullValue(self.invitationCellDelegate)){
+        if ([self.invitationCellDelegate respondsToSelector:@selector(deleteInvitation:)]){
+            [self.invitationCellDelegate deleteInvitation:self.tag];
+        }
+    }
 }
 
 - (IBAction)confirmButtonDidPressed:(id)sender {
-    
+    if (isNotNullValue(self.invitationCellDelegate)){
+        if ([self.invitationCellDelegate respondsToSelector:@selector(confirmInvitation:)]){
+            [self.invitationCellDelegate confirmInvitation:self.tag];
+        }
+    }
 }
 
 #pragma mark - Private
@@ -48,8 +56,8 @@
     self.fakeCardView.layer.cornerRadius = 6;
     self.cardView.layer.cornerRadius = 6;
     
-    [self.fakeCardView addGlowEffect];
-    [self.cardView addGlowEffect];
+    [self.fakeCardView addGlowEffect:[UIColor black10]];
+    [self.cardView addGlowEffect:[UIColor black10]];
     
     self.cardView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleFingerTap:)];

@@ -10,6 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Utils)
+
+/// 字串轉為指定格式的NSDate
+/// @param formatString 時間格式
 - (NSDate *)dateWithFormatString:(NSString *)formatString;
 - (BOOL) canFindSubString:(NSString *)subString;
 - (BOOL) cannotFindSubString:(NSString *)subString;

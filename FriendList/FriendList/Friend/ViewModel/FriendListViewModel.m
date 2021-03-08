@@ -9,12 +9,18 @@
 #import "Friend.h"
 #import "User.h"
 #import "NetworkProvider.h"
-
+#import "AppDelegate.h"
 
 @interface FriendListViewModel ()
+
+/// Api raw data
 @property (strong, nonatomic) NSMutableArray<Friend *> *friendList;
 @property (strong, nonatomic) User *userProfile;
+
+/// NetworkProvider
 @property (strong, nonatomic) NetworkProvider *provider;
+
+/// 搜尋關鍵字
 @property (strong, nonatomic) NSString *keyword;
 @end
 
@@ -28,16 +34,35 @@
         self.friendListUpdateDelegate = delegate;
         self.feeds = [[NSMutableArray alloc] init];
         self.category = FriendCategoryFriend;
+        self.keyword = @"";
+        self.isInvitationExpand = NO;
     }
     return self;
 }
 - (void)bind {
+    
     [self fetchUserProfile];
-    [self fetchFriendListWithInvitation];
+    //根據需求獲取對應的資料
+    switch ([AppDelegate sharedAppDelegate].layoutType) {
+        case LayoutTypeNoFriend:
+            [self fetchEmptyFriendList];
+            break;
+        case LayoutTypeFriendWithoutInvitation:
+            [self fetchFriendListWithoutInvitation];
+            break;
+        case LayoutTypeFriendWithInvitation:
+            [self fetchFriendListWithInvitation];
+            break;
+        
+    }
 }
 
 - (void)seachFriendByKeyword:(NSString *)keyword {
+    
     self.keyword = keyword;
+    if (self.category == FriendCategoryChat){
+        return;
+    }
     [self setUpFeedsByKeyword:keyword];
     if (isNotNullValue(self.friendListUpdateDelegate)) {
         if([self.friendListUpdateDelegate respondsToSelector:@selector(willUpdateFriendList)]){
@@ -46,6 +71,10 @@
     }
 }
 - (void)showFreindListByCategory:(FriendCategory)category {
+    if (category == self.category) {
+        return;
+    }
+    self.category = category;
     switch (category) {
         case FriendCategoryFriend:
             [self setUpFeedsByKeyword:self.keyword];
@@ -66,12 +95,17 @@
     [self setUpFeedsByKeyword:@""];
 }
 
+/// 配置每一個cell自己的ViewModel
+/// @param keyword 關鍵字
 - (void)setUpFeedsByKeyword:(NSString *)keyword {
     
     [self.feeds removeAllObjects];
+    if (self.category == FriendCategoryChat){
+        return;
+    }
     
     for (Friend *friend in self.friendList) {
-        
+        //排除friendStatus 為邀請狀態
         if (friend.friendStatus != FriendStatusInvitation && friend.friendStatus != FriendStatusUnknow){
             
             if ([keyword isEmpty]){
@@ -100,8 +134,25 @@
     return [self getFriendInvitations].count;
 }
 
+- (void)removeInvitationByFid:(NSString *)fid {
+    for (Friend *friend in self.friendList) {
+        if ([friend.fid isEqualToString:fid]){
+            [self.friendList removeObject:friend];
+            break;
+        }
+    }
+    [self setUpFeeds];
+    
+    if (isNotNullValue(self.friendListUpdateDelegate)) {
+        if([self.friendListUpdateDelegate respondsToSelector:@selector(willUpdateFriendList)]){
+            [self.friendListUpdateDelegate willUpdateFriendList];
+        }
+    }
+}
+
 #pragma mark - Fetching Data
 
+/// 使用者資料
 - (void)fetchUserProfile {
     
     [self.provider setTarget:kApiUrlUserInfo httpMethod:@"GET"];
@@ -118,6 +169,21 @@
     }];
 }
 
+/// 無好友
+- (void)fetchEmptyFriendList {
+    [self.provider setTarget:kApiUrlFriend4 httpMethod:@"GET"];
+    __weak __typeof(self) weakSelf = self;
+    [self.provider sendWithParameter:@{} success:^(NSDictionary *responseDic) {
+        NSLog(@"%@ success", NSStringFromSelector(_cmd));
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        strongSelf.friendList = [[NSMutableArray alloc] initWithArray:[strongSelf handleResultByFriendResponseDic:responseDic]];
+        [strongSelf onFetchEmptyFriendList];
+    } failure:^(NSError *error) {
+        NSLog(@"%@ fail with error:%@", NSStringFromSelector(_cmd), error.localizedDescription);
+    }];
+}
+
+/// 只有好友列表
 - (void)fetchFriendListWithoutInvitation {
     
     
@@ -127,7 +193,7 @@
     
     __weak __typeof(self) weakSelf = self;
     
-    /// !Page 1
+    /// !Page 1, request API 2-(2)
     dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_group_t group = dispatch_group_create();
     
@@ -145,7 +211,7 @@
             dispatch_group_leave(group);
         }];
     });
-    /// !Page 2
+    /// !Page 2, request API 2-(3)
     dispatch_group_enter(group);
     dispatch_group_async(group, dispatch_get_main_queue(), ^{
         
@@ -162,7 +228,7 @@
             dispatch_group_leave(group);
         }];
     });
-    
+    /// !兩頁回來一起處理資料
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         if (errors.count == 0){
             NSLog(@"%@ success", NSStringFromSelector(_cmd));
@@ -173,10 +239,12 @@
     });
 }
 
+/// 好友列表含邀請
 - (void)fetchFriendListWithInvitation{
     
     [self.provider setTarget:kApiUrlFriend3 httpMethod:@"GET"];
     __weak __typeof(self) weakSelf = self;
+    ///! request API 2-(4)
     [self.provider sendWithParameter:@{} success:^(NSDictionary *responseDic) {
         NSLog(@"%@ success", NSStringFromSelector(_cmd));
         __strong __typeof(weakSelf)strongSelf = weakSelf;
@@ -195,12 +263,21 @@
         }
     }
 }
+- (void)onFetchEmptyFriendList {
+    if (isNotNullValue(self.friendListUpdateDelegate)) {
+        if([self.friendListUpdateDelegate respondsToSelector:@selector(shouldShowEmptyResultView)]){
+            [self.friendListUpdateDelegate shouldShowEmptyResultView];
+        }
+    }
+}
 
 - (void)onFetchFriendListWithoutInvitationSuccess:(NSArray<Friend *> *)friendList {
     NSMutableDictionary<NSString *, Friend *> *dictionary = [NSMutableDictionary new];
+    //處理重複的Friend資料
     [friendList enumerateObjectsUsingBlock:^(Friend *_Nonnull friend, NSUInteger index, BOOL *_Nonnull stop) {
         Friend *existFriend = dictionary[friend.fid];
         if (isNotNullValue(existFriend)){
+            //最新的
             if ([friend isNewestFriendThan:existFriend]){
                 [dictionary setValue:friend forKey:friend.fid];
             }
@@ -208,6 +285,7 @@
             [dictionary setValue:friend forKey:friend.fid];
         }
     }];
+    //篩選完的資料
     NSMutableArray *combinedFriends = [[NSMutableArray alloc] init];
     for (Friend *tempFriend in friendList) {
         Friend *friend = [dictionary objectForKey: tempFriend.fid];

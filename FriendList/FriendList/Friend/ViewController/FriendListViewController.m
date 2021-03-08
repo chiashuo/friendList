@@ -10,6 +10,7 @@
 #import "FriendTableViewCell.h"
 #import "FriendListViewModel.h"
 #import "FriendInvitationView.h"
+#import "EmptyResultView.h"
 
 #define friendInvitationRowHeight 100
 @interface FriendListViewController () <UITableViewDataSource, FriendSearchDelegate, FriendListUpdateDelegate>
@@ -31,16 +32,21 @@
 /// !Property
 @property (strong, nonatomic) FriendListViewModel *viewModel;
 @property (strong, nonatomic) FriendInvitationView *friendInvitationView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) EmptyResultView *emptyResultView;
 @end
 
 @implementation FriendListViewController
 - (void)dealloc {
     NSLog(@"FriendListViewController dealloc");
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kFriendInvitationViewStatusDidChanged object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kFriendInvitationViewExpandStatusChanged object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kFriendInvitationDidAction object:nil];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupView];
+    [self setupNavigationBar];
+    [self regiestNotificationObserver];
     [self registerCell];
     [self setupViewModel];
     // Do any additional setup after loading the view from its nib.
@@ -78,8 +84,25 @@
     self.chatBadgeLabel.layer.cornerRadius = 9;
     self.chatBadgeLabel.clipsToBounds = YES;
     self.chatBadgeLabel.text = @" 99+ ";
-    [self initSearchTableHeader];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self initFriendInvitationView];
+    [self initRefreshControl];
+    
+}
+-(void)setupNavigationBar {
+    //如果直接設navigationBarTintColor的話會因為透明度導致有色差，故先設一個空白的background在設定顏色
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    //移除Bar下面的那條線
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    [self.navigationController.navigationBar setHidden:NO];
+    //bar item
+    self.navigationItem.leftBarButtonItems = @[self.navigationBarATMButton, self.navigationBarTransferButton];
+    self.navigationItem.rightBarButtonItem = self.navigationBarScanButton;
+    self.navigationItem.titleView = [[UIView alloc] init];
+    //Bar的底色
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteTwo]];
+    self.navigationController.navigationBar.translucent = NO;
+    
 }
 
 - (void)registerCell {
@@ -98,7 +121,11 @@
     self.friendInvitationView = [FriendInvitationView initFriendInvitationView];
     [self.friendInvitationBaseView addSubview:self.friendInvitationView];
     [self.friendInvitationView layoutAttachAll];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(invitationViewStatusDidChanged:) name:kFriendInvitationViewStatusDidChanged object:nil];
+}
+- (void)initRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
 }
 #pragma mark - ViewModel Setting
 
@@ -109,6 +136,8 @@
 
 #pragma mark - Private
 
+/// 畫面上推至搜尋框置頂至navigationBar下方
+/// @param need 是否需要置頂
 - (void) needHideTopView:(BOOL)need {
     self.userViewTopConstraint.constant = need ? - self.topView.frame.size.height : 0.0;
     [UIView animateWithDuration:0.25 animations:^{
@@ -121,19 +150,33 @@
     if (count >= 99){
         self.friendBadgeLabel.text = @" 99+ ";
     }else{
-        self.friendBadgeLabel.text = [NSString stringWithFormat:@"%ld", (long)count];
+        self.friendBadgeLabel.text = [NSString stringWithFormat:@"%ld", count];
     }
+}
+- (void)regiestNotificationObserver{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(invitationViewStatusDidChanged:) name:kFriendInvitationViewExpandStatusChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(invitationDidAction:) name:kFriendInvitationDidAction object:nil];
+}
+
+- (void)refreshTable{
+    [self.viewModel bind];
+    [self.refreshControl beginRefreshing];
 }
 
 #pragma mark - Notification Handler
 - (void)invitationViewStatusDidChanged:(NSNotification *)notification{
     BOOL isExpand = [notification.object boolValue];
+    self.viewModel.isInvitationExpand = isExpand;
     self.friendInvitationBaseViewHeight.constant = isExpand ? self.viewModel.invitationsCount * friendInvitationRowHeight : friendInvitationRowHeight;
     [UIView animateWithDuration:0.2 animations:^{
         [self.view layoutIfNeeded];
     }];
 }
-
+- (void)invitationDidAction:(NSNotification *)notification{
+    NSInteger index = [notification.object integerValue];
+    Friend *changedFriend = [[self.viewModel getFriendInvitations] objectAtIndex:index];
+    [self.viewModel removeInvitationByFid:changedFriend.fid];
+}
 #pragma mark - FriendSearchDelegate
 
 - (void)didBegainEditing {
@@ -179,11 +222,33 @@
     NSArray<Friend *> *friendInvitations = [self.viewModel getFriendInvitations];
     [self.friendInvitationView bind:friendInvitations];
     dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.viewModel.feeds.isNotEmpty){
+            [self initSearchTableHeader];
+        }
         [self.tableView reloadData];
         NSInteger invitationsCount = [self.viewModel invitationsCount];
+        //更新好友邀請的Badge及邀請列表
         [self showFriendBadgeLabelWithCount:invitationsCount];
         if (invitationsCount > 0){
-            self.friendInvitationBaseViewHeight.constant = friendInvitationRowHeight;
+            self.friendInvitationBaseViewHeight.constant = self.viewModel.isInvitationExpand ? self.viewModel.invitationsCount * friendInvitationRowHeight : friendInvitationRowHeight;
+        }else{
+            self.friendInvitationBaseViewHeight.constant = 0;
+        }
+        if (self.refreshControl.isRefreshing){
+            [self.refreshControl endRefreshing];
+        }
+    });
+}
+- (void)shouldShowEmptyResultView {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (isNullValue(self.emptyResultView)){
+            self.emptyResultView = [EmptyResultView initEmptyResultView];
+            self.emptyResultView.frame = self.tableView.frame;
+            [self.view addSubview:self.emptyResultView];
+            [self.view bringSubviewToFront:self.tableView];
+        }
+        if (self.refreshControl.isRefreshing){
+            [self.refreshControl endRefreshing];
         }
     });
 }

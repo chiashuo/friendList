@@ -10,6 +10,7 @@
 #import "BaseViewController.h"
 #import "UIColor+HexString.h"
 #import "FriendListViewController.h"
+#import "OptionHelperViewController.h"
 
 typedef NS_ENUM(NSInteger, MainTabBarItemTag) {
     

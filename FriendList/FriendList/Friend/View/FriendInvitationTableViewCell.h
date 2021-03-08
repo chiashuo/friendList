@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol InvitationCellDelegate <NSObject>
 
--(void)willExpand;
+- (void)willExpand;
+- (void)confirmInvitation:(NSInteger)index;
+- (void)deleteInvitation:(NSInteger)index;
 
 @end
 @interface FriendInvitationTableViewCell : UITableViewCell

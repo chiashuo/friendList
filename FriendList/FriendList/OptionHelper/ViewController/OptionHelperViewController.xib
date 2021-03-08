@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OptionHelperViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="typeButtons" destination="OU6-1r-wBo" id="K5d-Jo-hN2"/>
+                <outletCollection property="typeButtons" destination="jhs-1y-nQf" id="YJh-l0-wUp"/>
+                <outletCollection property="typeButtons" destination="NSf-La-ERm" id="erA-Qh-miM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OU6-1r-wBo">
+                    <rect key="frame" x="67.5" y="123.5" width="240" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="Qgh-oR-ect"/>
+                        <constraint firstAttribute="height" constant="40" id="icG-yn-hBu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                    <state key="normal" title="無好友畫面:request API 2-(5)">
+                        <color key="titleColor" name="hotPink"/>
+                    </state>
+                    <connections>
+                        <action selector="noFriendButtonPressed:" destination="-1" eventType="touchUpInside" id="CL1-2k-nBq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSf-La-ERm">
+                    <rect key="frame" x="47.5" y="313.5" width="280" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="mjV-a7-uVX"/>
+                        <constraint firstAttribute="height" constant="40" id="oze-ZN-x1c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                    <state key="normal" title="只有好友列表:request API 2-(2)、2-(3)">
+                        <color key="titleColor" name="hotPink"/>
+                    </state>
+                    <connections>
+                        <action selector="friendWithoutInvitationButton:" destination="-1" eventType="touchUpInside" id="gfd-Uz-tAK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhs-1y-nQf">
+                    <rect key="frame" x="67.5" y="503.5" width="240" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="LZg-o8-vPv"/>
+                        <constraint firstAttribute="height" constant="40" id="tNm-N2-iFa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                    <state key="normal" title="好友列表含邀請:request API 2-(4)">
+                        <color key="titleColor" name="hotPink"/>
+                    </state>
+                    <connections>
+                        <action selector="friendWithInvitationButtonPressed:" destination="-1" eventType="touchUpInside" id="fus-OA-Lv4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="OU6-1r-wBo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GiF-yO-Oh6"/>
+                <constraint firstItem="NSf-La-ERm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="MHm-lO-QPg"/>
+                <constraint firstItem="NSf-La-ERm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Muw-Fk-ApX"/>
+                <constraint firstItem="jhs-1y-nQf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="R89-pY-UPR"/>
+                <constraint firstItem="NSf-La-ERm" firstAttribute="top" secondItem="OU6-1r-wBo" secondAttribute="bottom" constant="150" id="fmz-Or-XlH"/>
+                <constraint firstItem="jhs-1y-nQf" firstAttribute="top" secondItem="NSf-La-ERm" secondAttribute="bottom" constant="150" id="qWj-hc-uaP"/>
+            </constraints>
+            <point key="canvasLocation" x="128.98550724637681" y="93.75"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="hotPink">
+            <color red="0.92500001192092896" green="0.0" blue="0.54900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

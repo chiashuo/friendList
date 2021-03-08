@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)steel12;
 + (UIColor *)veryLightPinkTwo;
 + (UIColor *)brownGrey;
++ (UIColor *)frogGreen;
++ (UIColor *)lightOliveGreen;
++ (UIColor *)black10;
++ (UIColor *)appleGreen40;
++ (UIColor *)whiteTwo;
 @end
 
 NS_ASSUME_NONNULL_END

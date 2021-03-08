@@ -18,8 +18,15 @@ typedef NS_ENUM(NSInteger, FriendCategory) {
 
 @protocol FriendListUpdateDelegate <NSObject>
 
+/// 更新User的相關UI
+/// @param user 使用者資料
 - (void)willUpdateUserProfile:(User *)user;
+
+/// 更新好友清單
 - (void)willUpdateFriendList;
+
+/// 顯示無好友的狀態
+- (void)shouldShowEmptyResultView;
 @end
 @interface FriendListViewModel : NSObject
 
@@ -27,13 +34,26 @@ typedef NS_ENUM(NSInteger, FriendCategory) {
 @property (strong, nonatomic) NSMutableArray<FriendCellViewModel *> *feeds;
 @property (assign, nonatomic) NSInteger invitationsCount;
 @property (assign, nonatomic) FriendCategory category;
+@property (assign, nonatomic) BOOL isInvitationExpand;
 
 /// Public Method
 - (instancetype)initWithDelegate:(id)delegate;
 - (void)bind;
+
+/// 搜尋好友
+/// @param keyword 關鍵字
 - (void)seachFriendByKeyword:(NSString *)keyword;
+
+/// 取得誰送給你好友的物件
 - (NSArray<Friend *> *)getFriendInvitations;
+
+/// 顯示對應的好友清單
+/// @param category FriendCategory
 - (void)showFreindListByCategory:(FriendCategory)category;
+
+/// 按下確認或者移除邀請
+/// @param fid 好友的ID
+- (void)removeInvitationByFid:(NSString *)fid;
 
 @end
 

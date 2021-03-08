@@ -20,4 +20,5 @@
 #import "Configure.h"
 #import "FriendListSharedClass.h"
 #import "NSString+Utils.h"
+#import "OptionHelperModel.h"
 #endif /* FriendList_Prefix_pch */

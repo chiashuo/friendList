@@ -6,35 +6,43 @@
 //
 
 #import "AppDelegate.h"
+#import "OptionHelperViewController.h"
+#import "TabBarViewController.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) OptionHelperViewController *opeionHelperVC;
+@property (strong, nonatomic) TabBarViewController *mainTabBarVC;
 @end
 
 @implementation AppDelegate
 
++ (AppDelegate *) sharedAppDelegate {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self initWindow];
+    [self initOptionHelperVC];
+    [self initTabBarVC];
     return YES;
 }
 
-
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
+- (void)initWindow {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
 }
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+- (void)initOptionHelperVC {
+    self.opeionHelperVC = [[OptionHelperViewController alloc] initWithNibName:@"OptionHelperViewController" bundle:nil];
+    [self.window setRootViewController: self.opeionHelperVC];
+    [self.window makeKeyAndVisible];
 }
-
-
+- (void)initTabBarVC {
+    UIStoryboard *tabBarStroyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.mainTabBarVC = [tabBarStroyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
+}
+- (void)setTabBarToRoot{
+    [self.window setRootViewController: self.mainTabBarVC];
+    [self.window makeKeyAndVisible];
+}
 @end

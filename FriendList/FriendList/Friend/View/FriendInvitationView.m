@@ -24,16 +24,18 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.tableView.dataSource = self;
+    self.viewModel = [[FriendInvitationViewModel alloc] initWithDelegate:self];
     [self.tableView registerNib:[FriendInvitationTableViewCell nib] forCellReuseIdentifier:[FriendInvitationTableViewCell identifier]];
 }
 - (void)bind:(NSArray <Friend *> *)friendInvitations {
-    self.viewModel = [[FriendInvitationViewModel alloc] initWithDelegate:self];
+    
     [self.viewModel bind:friendInvitations];
 }
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FriendInvitationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[FriendInvitationTableViewCell identifier] forIndexPath:indexPath];
+    cell.tag = indexPath.row;
     FriendInvitationCellViewModel *feed = self.viewModel.feeds[indexPath.row];
     [cell configure:feed expend:self.viewModel.isExpand];
     cell.invitationCellDelegate = self;
@@ -50,6 +52,12 @@
         return count == 0 ? count : 1;
     }
 }
+#pragma mark - Private
+- (void)updateTableView {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
 #pragma mark - InvitationCellDelegate
 - (void)willExpand {
     self.viewModel.isExpand = !self.viewModel.isExpand;
@@ -58,15 +66,23 @@
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
     }];
     NSString *object = self.viewModel.isExpand ? @"YES":@"NO";
-    [[NSNotificationCenter defaultCenter] postNotificationName:kFriendInvitationViewStatusDidChanged object:object];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFriendInvitationViewExpandStatusChanged object:object];
 }
-
+- (void)confirmInvitation:(NSInteger)index {
+    
+    [self.viewModel invitationDidAction:index];
+    [self updateTableView];
+}
+- (void)deleteInvitation:(NSInteger)index {
+    
+    [self.viewModel invitationDidAction:index];
+    [self updateTableView];
+}
 #pragma mark - FriendInvitationUpdateDelegate
 - (void)willUpdateFriendInvitationView {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
+    [self updateTableView];
 }
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

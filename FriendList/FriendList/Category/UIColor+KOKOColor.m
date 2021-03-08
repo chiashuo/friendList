@@ -33,4 +33,19 @@
     return [UIColor colorWithHexString:@"999999"];
 }
 
++ (UIColor *)frogGreen {
+    return [UIColor colorWithHexString:@"56b30b"];
+}
++ (UIColor *)lightOliveGreen {
+    return [UIColor colorWithHexString:@"a6cc42"];
+}
++ (UIColor *)black10 {
+    return [UIColor colorWithHexString:@"000000" withAlpha:0.1];
+}
++ (UIColor *)appleGreen40 {
+    return [UIColor colorWithHexString:@"79c41b" withAlpha:0.4];
+}
++ (UIColor *)whiteTwo {
+    return [UIColor colorWithHexString:@"fcfcfc"];
+}
 @end

@@ -26,13 +26,23 @@
     [friends enumerateObjectsUsingBlock:^(Friend * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.friendStatus == FriendStatusInvitation){
             FriendInvitationCellViewModel *feed = [[FriendInvitationCellViewModel alloc] initWithFriend: obj];
-            if (idx == 0){
+            //只有第一個且超過一則邀情才會有蓋在下面的那張卡
+            if (idx == 0 && friends.count > 1){
                 feed.isFakeCardShow = true;
             }
             [self.feeds addObject:feed];
         }
     }];
     
+    
+    if (isNotNullValue(self.friendInvitationUpdateDelegate)) {
+        if ([self.friendInvitationUpdateDelegate respondsToSelector:@selector(willUpdateFriendInvitationView)]){
+            [self.friendInvitationUpdateDelegate willUpdateFriendInvitationView];
+        }
+    }
+}
+- (void)invitationDidAction:(NSInteger)index {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFriendInvitationDidAction object:[NSString stringWithFormat:@"%ld", index]];
     
     if (isNotNullValue(self.friendInvitationUpdateDelegate)) {
         if ([self.friendInvitationUpdateDelegate respondsToSelector:@selector(willUpdateFriendInvitationView)]){

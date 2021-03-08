@@ -19,11 +19,11 @@
     self.layer.borderColor = borderColor.CGColor;
 }
 
-- (void)addGlowEffect {
+- (void)addGlowEffect:(UIColor *)color {
     self.layer.shadowOpacity = 0.5f;
     self.layer.shadowOffset = CGSizeZero;
     self.layer.shadowRadius = 3.0;
-    self.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.layer.shadowColor = color.CGColor;
 }
 
 - (void)layoutAttachAll {

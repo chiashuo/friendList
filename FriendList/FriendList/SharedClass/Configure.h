@@ -13,5 +13,12 @@ typedef NS_ENUM(NSInteger, ResultCode) {
     ResultCodeWrongOwnDefinition = -1002
 };
 
-static NSString * const kFriendInvitationViewStatusDidChanged = @"kFriendInvitationViewStatusDidChange";
+typedef NS_ENUM(NSInteger, LayoutType) {
+    LayoutTypeNoFriend,
+    LayoutTypeFriendWithInvitation,
+    LayoutTypeFriendWithoutInvitation
+};
+
+static NSString * const kFriendInvitationViewExpandStatusChanged = @"kFriendInvitationViewExpandStatusChanged";
+static NSString * const kFriendInvitationDidAction = @"kFriendInvitationDidAction";
 #endif /* Configure_h */

@@ -8,7 +8,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-
++ (AppDelegate *) sharedAppDelegate;
+@property (assign, nonatomic) LayoutType layoutType;
+@property (nonatomic, strong) UIWindow *window;
+- (void)setTabBarToRoot;
 @end
 
