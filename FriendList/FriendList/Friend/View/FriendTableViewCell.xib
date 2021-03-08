@@ -25,9 +25,10 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51V-ow-5OV">
-                        <rect key="frame" x="236" y="14" width="60" height="32"/>
+                        <rect key="frame" x="236" y="18" width="60" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="Giz-zj-Nli"/>
+                            <constraint firstAttribute="height" constant="24" id="tbI-Se-c4v"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="14"/>
                         <state key="normal" title="邀請中">
@@ -109,9 +110,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="avatarImageView" destination="x0O-RM-whW" id="pmz-Ew-LaR"/>
                 <outlet property="inviteButton" destination="51V-ow-5OV" id="QbZ-zd-xQh"/>
                 <outlet property="moreButton" destination="HzZ-pd-1vV" id="bxj-mg-VRg"/>
                 <outlet property="nameLabel" destination="hV7-RU-K9J" id="pDg-Ex-xBS"/>
+                <outlet property="starImageView" destination="gBn-Fi-goM" id="Hpi-Ae-acP"/>
                 <outlet property="transferButton" destination="r19-6F-t8R" id="vIW-2H-lSg"/>
                 <outlet property="transferButtonToInviteButtonConstraint" destination="kqa-oG-Dxf" id="gGX-5T-I3u"/>
                 <outlet property="transferButtonToMoreButtonConstraint" destination="GBu-NL-Ui2" id="kQb-rh-jZ6"/>
@@ -124,16 +127,16 @@
         <image name="icFriendsStar" width="14" height="14"/>
         <image name="imgFriendsList" width="40" height="40"/>
         <namedColor name="brownGrey">
-            <color red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="greyishBrown">
-            <color red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.27799999713897705" green="0.27799999713897705" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="hotPink">
-            <color red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92500001192092896" green="0.0" blue="0.54900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="veryLightPinkTwo">
-            <color red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78799998760223389" green="0.78799998760223389" blue="0.78799998760223389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

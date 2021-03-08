@@ -36,6 +36,16 @@
 		22755A4D25F286770059B5D6 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22755A4B25F286770059B5D6 /* FriendTableViewCell.xib */; };
 		22755A5C25F28F5E0059B5D6 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22755A5B25F28F5E0059B5D6 /* UIView+Utils.m */; };
 		22755A6B25F291160059B5D6 /* UITableViewCell+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22755A6A25F291160059B5D6 /* UITableViewCell+Utils.m */; };
+		22A73D8625F5D54600DBE303 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A73D8525F5D54600DBE303 /* NSString+Utils.m */; };
+		22A73D8F25F5DDCA00DBE303 /* FriendCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A73D8E25F5DDCA00DBE303 /* FriendCellViewModel.m */; };
+		22A73D9525F5F6BC00DBE303 /* FriendInvitationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A73D9425F5F6BC00DBE303 /* FriendInvitationView.m */; };
+		22A73D9A25F5F6D400DBE303 /* FriendInvitationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A73D9925F5F6D400DBE303 /* FriendInvitationView.xib */; };
+		22A73DA125F5F7C900DBE303 /* FriendInvitationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A73D9F25F5F7C900DBE303 /* FriendInvitationTableViewCell.m */; };
+		22A73DA225F5F7C900DBE303 /* FriendInvitationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A73DA025F5F7C900DBE303 /* FriendInvitationTableViewCell.xib */; };
+		22A73DA825F60BF200DBE303 /* FriendInvitationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A73DA725F60BF200DBE303 /* FriendInvitationViewModel.m */; };
+		22A73DAE25F60CF100DBE303 /* FriendInvitationCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A73DAD25F60CF100DBE303 /* FriendInvitationCellViewModel.m */; };
+		22A83E4A25F488F400240EC3 /* FriendListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A83E4925F488F400240EC3 /* FriendListViewModel.m */; };
+		22AC1FEF25F5194E0001299A /* FriendListSharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC1FEE25F5194E0001299A /* FriendListSharedClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +121,24 @@
 		22755A5B25F28F5E0059B5D6 /* UIView+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
 		22755A6925F291160059B5D6 /* UITableViewCell+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Utils.h"; sourceTree = "<group>"; };
 		22755A6A25F291160059B5D6 /* UITableViewCell+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Utils.m"; sourceTree = "<group>"; };
+		22A73D8425F5D54600DBE303 /* NSString+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		22A73D8525F5D54600DBE303 /* NSString+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		22A73D8D25F5DDCA00DBE303 /* FriendCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendCellViewModel.h; sourceTree = "<group>"; };
+		22A73D8E25F5DDCA00DBE303 /* FriendCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendCellViewModel.m; sourceTree = "<group>"; };
+		22A73D9325F5F6BC00DBE303 /* FriendInvitationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendInvitationView.h; sourceTree = "<group>"; };
+		22A73D9425F5F6BC00DBE303 /* FriendInvitationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendInvitationView.m; sourceTree = "<group>"; };
+		22A73D9925F5F6D400DBE303 /* FriendInvitationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendInvitationView.xib; sourceTree = "<group>"; };
+		22A73D9E25F5F7C900DBE303 /* FriendInvitationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendInvitationTableViewCell.h; sourceTree = "<group>"; };
+		22A73D9F25F5F7C900DBE303 /* FriendInvitationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendInvitationTableViewCell.m; sourceTree = "<group>"; };
+		22A73DA025F5F7C900DBE303 /* FriendInvitationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendInvitationTableViewCell.xib; sourceTree = "<group>"; };
+		22A73DA625F60BF200DBE303 /* FriendInvitationViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendInvitationViewModel.h; sourceTree = "<group>"; };
+		22A73DA725F60BF200DBE303 /* FriendInvitationViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendInvitationViewModel.m; sourceTree = "<group>"; };
+		22A73DAC25F60CF100DBE303 /* FriendInvitationCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendInvitationCellViewModel.h; sourceTree = "<group>"; };
+		22A73DAD25F60CF100DBE303 /* FriendInvitationCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendInvitationCellViewModel.m; sourceTree = "<group>"; };
+		22A83E4825F488F400240EC3 /* FriendListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendListViewModel.h; sourceTree = "<group>"; };
+		22A83E4925F488F400240EC3 /* FriendListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendListViewModel.m; sourceTree = "<group>"; };
+		22AC1FED25F5194E0001299A /* FriendListSharedClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendListSharedClass.h; sourceTree = "<group>"; };
+		22AC1FEE25F5194E0001299A /* FriendListSharedClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendListSharedClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +169,7 @@
 		046130EC25F21B000093A602 /* Friend */ = {
 			isa = PBXGroup;
 			children = (
+				22A83E4725F488D700240EC3 /* ViewModel */,
 				22755A2825F277000059B5D6 /* View */,
 				22755A0F25F267BF0059B5D6 /* ViewController */,
 				046130ED25F227410093A602 /* Model */,
@@ -162,6 +191,8 @@
 		0480208925F1D9CA008C6F8A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				22A73D8425F5D54600DBE303 /* NSString+Utils.h */,
+				22A73D8525F5D54600DBE303 /* NSString+Utils.m */,
 				0480209625F1DA2E008C6F8A /* NSArray+Utils.h */,
 				0480209725F1DA2E008C6F8A /* NSArray+Utils.m */,
 				046130E625F213490093A602 /* UIColor+HexString.h */,
@@ -268,6 +299,8 @@
 				0480209C25F1DA9F008C6F8A /* ViewController */,
 				0489C6A825F0E57D0060E2CC /* Configure.h */,
 				046130F725F229DB0093A602 /* UtilDefine.h */,
+				22AC1FED25F5194E0001299A /* FriendListSharedClass.h */,
+				22AC1FEE25F5194E0001299A /* FriendListSharedClass.m */,
 			);
 			name = SharedClass;
 			path = FriendList/SharedClass;
@@ -292,8 +325,29 @@
 				22755A4925F286770059B5D6 /* FriendTableViewCell.h */,
 				22755A4A25F286770059B5D6 /* FriendTableViewCell.m */,
 				22755A4B25F286770059B5D6 /* FriendTableViewCell.xib */,
+				22A73D9325F5F6BC00DBE303 /* FriendInvitationView.h */,
+				22A73D9425F5F6BC00DBE303 /* FriendInvitationView.m */,
+				22A73D9925F5F6D400DBE303 /* FriendInvitationView.xib */,
+				22A73D9E25F5F7C900DBE303 /* FriendInvitationTableViewCell.h */,
+				22A73D9F25F5F7C900DBE303 /* FriendInvitationTableViewCell.m */,
+				22A73DA025F5F7C900DBE303 /* FriendInvitationTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		22A83E4725F488D700240EC3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22A83E4825F488F400240EC3 /* FriendListViewModel.h */,
+				22A83E4925F488F400240EC3 /* FriendListViewModel.m */,
+				22A73D8D25F5DDCA00DBE303 /* FriendCellViewModel.h */,
+				22A73D8E25F5DDCA00DBE303 /* FriendCellViewModel.m */,
+				22A73DA625F60BF200DBE303 /* FriendInvitationViewModel.h */,
+				22A73DA725F60BF200DBE303 /* FriendInvitationViewModel.m */,
+				22A73DAC25F60CF100DBE303 /* FriendInvitationCellViewModel.h */,
+				22A73DAD25F60CF100DBE303 /* FriendInvitationCellViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,8 +456,10 @@
 				0489C65825F0DB430060E2CC /* LaunchScreen.storyboard in Resources */,
 				0489C69925F0E17E0060E2CC /* BaseGroupTableViewController.xib in Resources */,
 				22755A2125F267FB0059B5D6 /* FriendListViewController.xib in Resources */,
+				22A73DA225F5F7C900DBE303 /* FriendInvitationTableViewCell.xib in Resources */,
 				0489C65525F0DB430060E2CC /* Assets.xcassets in Resources */,
 				0489C69425F0E1400060E2CC /* BasePlainTableViewController.xib in Resources */,
+				22A73D9A25F5F6D400DBE303 /* FriendInvitationView.xib in Resources */,
 				0489C65325F0DB410060E2CC /* Main.storyboard in Resources */,
 				22755A3025F2772A0059B5D6 /* FriendSearchView.xib in Resources */,
 				22755A4D25F286770059B5D6 /* FriendTableViewCell.xib in Resources */,
@@ -433,20 +489,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				046130E825F213490093A602 /* UIColor+HexString.m in Sources */,
+				22A83E4A25F488F400240EC3 /* FriendListViewModel.m in Sources */,
 				0489C68325F0DBDE0060E2CC /* BaseViewController.m in Sources */,
 				22755A2B25F277200059B5D6 /* FriendSearchView.m in Sources */,
 				22755A3F25F27ED70059B5D6 /* UIColor+KOKOColor.m in Sources */,
 				0489C68C25F0DE0E0060E2CC /* BaseNavigationController.m in Sources */,
 				22755A2025F267FB0059B5D6 /* FriendListViewController.m in Sources */,
 				0461310725F22ED70093A602 /* Friend.m in Sources */,
+				22A73D8F25F5DDCA00DBE303 /* FriendCellViewModel.m in Sources */,
 				0489C69325F0E1400060E2CC /* BaseTableViewController.m in Sources */,
+				22A73DA125F5F7C900DBE303 /* FriendInvitationTableViewCell.m in Sources */,
+				22A73DAE25F60CF100DBE303 /* FriendInvitationCellViewModel.m in Sources */,
 				0489C6B925F0ECAE0060E2CC /* TabBarViewController.m in Sources */,
 				048020A025F1DDF0008C6F8A /* NetworkProvider.m in Sources */,
+				22AC1FEF25F5194E0001299A /* FriendListSharedClass.m in Sources */,
 				046130F025F2274D0093A602 /* User.m in Sources */,
+				22A73DA825F60BF200DBE303 /* FriendInvitationViewModel.m in Sources */,
+				22A73D8625F5D54600DBE303 /* NSString+Utils.m in Sources */,
 				22755A5C25F28F5E0059B5D6 /* UIView+Utils.m in Sources */,
 				22755A4C25F286770059B5D6 /* FriendTableViewCell.m in Sources */,
 				0489C64A25F0DB410060E2CC /* AppDelegate.m in Sources */,
 				0489C65B25F0DB430060E2CC /* main.m in Sources */,
+				22A73D9525F5F6BC00DBE303 /* FriendInvitationView.m in Sources */,
 				22755A6B25F291160059B5D6 /* UITableViewCell+Utils.m in Sources */,
 				0480209825F1DA2E008C6F8A /* NSArray+Utils.m in Sources */,
 				0489C64D25F0DB410060E2CC /* SceneDelegate.m in Sources */,

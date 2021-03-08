@@ -32,7 +32,7 @@
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hoi-UV-g9y">
                             <rect key="frame" x="28" y="7" width="279" height="22"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" name="steel12"/>
@@ -80,7 +80,7 @@
         <image name="icBtnAddFriends" width="25" height="25"/>
         <image name="icSearchBarSearchGray" width="14" height="14"/>
         <namedColor name="steel12">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.55686274509803924" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55699998140335083" green="0.55699998140335083" blue="0.55699998140335083" alpha="0.11999999731779099" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

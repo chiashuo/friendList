@@ -8,12 +8,10 @@
 #ifndef Configure_h
 #define Configure_h
 
-extern NSString* const kWebDomain = "https://dimanyen.github.io"
+typedef NS_ENUM(NSInteger, ResultCode) {
 
-#define kApiUrlUserInfo = [NSString stringWithFormat:@"%@/main.json", kAPIDomain]
-#define kApiUrlFriend1 = [NSString stringWithFormat:@"%@/friend1.json", kAPIDomain]
-#define kApiUrlFriend2 = [NSString stringWithFormat:@"%@/friend2.json", kAPIDomain]
-#define kApiUrlFriend3 = [NSString stringWithFormat:@"%@/friend3.json", kAPIDomain]
-#define kApiUrlFriend4 = [NSString stringWithFormat:@"%@/friend4.json", kAPIDomain]
+    ResultCodeWrongOwnDefinition = -1002
+};
 
+static NSString * const kFriendInvitationViewStatusDidChanged = @"kFriendInvitationViewStatusDidChange";
 #endif /* Configure_h */

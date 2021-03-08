@@ -17,5 +17,7 @@
 #import "UIColor+KOKOColor.h"
 #import "UIView+Utils.h"
 #import "UITableViewCell+Utils.h"
-
+#import "Configure.h"
+#import "FriendListSharedClass.h"
+#import "NSString+Utils.h"
 #endif /* FriendList_Prefix_pch */

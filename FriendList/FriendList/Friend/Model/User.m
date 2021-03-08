@@ -8,12 +8,19 @@
 #import "User.h"
 
 @implementation User
-- (instancetype)initWithDic:(NSDictionary *)dic
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
     if (self) {
-        self.name = isNotNullValue(dic[@"name"]) ? dic[@"name"] : @"";
-        self.kokoid = isNotNullValue(dic[@"kokoid"]) ? dic[@"kokoid"] : @"";
+        NSArray *userArray = [dictionary objectForKey:@"response"];
+        if (isNotNullValue(userArray) && userArray.count > 0){
+            NSDictionary *userRawData = isNotNullValue(userArray.firstObject) ? userArray.firstObject : @{};
+            self.name = isNotNullValue(userRawData[@"name"]) ? userRawData[@"name"] : @"";
+            self.kokoid = isNotNullValue(userRawData[@"kokoid"]) ? userRawData[@"kokoid"] : @"";
+        }else{
+            self.name = @"";
+            self.kokoid = @"";
+        }
     }
     return self;
 }

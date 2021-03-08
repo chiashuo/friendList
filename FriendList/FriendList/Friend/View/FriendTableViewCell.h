@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendCellViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol FirendCellDelegate <NSObject>
@@ -19,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FriendTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) id <FirendCellDelegate> delegate;
+- (void)configure:(FriendCellViewModel *)feed;
 
 @end
 

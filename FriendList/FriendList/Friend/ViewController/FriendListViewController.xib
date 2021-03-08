@@ -17,6 +17,8 @@
                 <outlet property="chatButton" destination="khq-PA-o7W" id="rTX-bV-ugJ"/>
                 <outlet property="friendBadgeLabel" destination="8w8-7q-E5t" id="fDe-92-8ap"/>
                 <outlet property="friendButton" destination="Ya6-UV-EGk" id="Fgb-ew-JGg"/>
+                <outlet property="friendInvitationBaseView" destination="Vqb-Fv-VxR" id="DIt-CV-g6h"/>
+                <outlet property="friendInvitationBaseViewHeight" destination="1R3-8N-qHq" id="2f7-cw-XCi"/>
                 <outlet property="tableView" destination="TKx-Vu-2ya" id="pAk-le-kpe"/>
                 <outlet property="topView" destination="3gi-70-VX0" id="35h-hN-Za0"/>
                 <outlet property="userIconImageView" destination="kwP-96-ZP7" id="9Xo-gk-aBR"/>
@@ -32,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gi-70-VX0">
-                    <rect key="frame" x="0.0" y="44" width="414" height="154"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="119"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-E0-apz" userLabel="User View">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
@@ -86,14 +88,14 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vqb-Fv-VxR">
-                            <rect key="frame" x="0.0" y="84" width="414" height="35"/>
+                            <rect key="frame" x="0.0" y="84" width="414" height="0.0"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="35" id="1R3-8N-qHq"/>
+                                <constraint firstAttribute="height" id="1R3-8N-qHq"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13S-5v-QEz" userLabel="Category View">
-                            <rect key="frame" x="0.0" y="119" width="414" height="34"/>
+                            <rect key="frame" x="0.0" y="84" width="414" height="34"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-UV-EGk">
                                     <rect key="frame" x="32" y="0.0" width="40" height="34"/>
@@ -185,12 +187,12 @@
                         <constraint firstAttribute="trailing" secondItem="aVT-E0-apz" secondAttribute="trailing" id="uvi-6y-aho"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TKx-Vu-2ya">
-                    <rect key="frame" x="0.0" y="199" width="414" height="663"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TKx-Vu-2ya">
+                    <rect key="frame" x="0.0" y="164" width="414" height="698"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-C5-f9s">
-                    <rect key="frame" x="0.0" y="198" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="163" width="414" height="1"/>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="kXw-ex-aHu"/>
@@ -218,16 +220,16 @@
         <image name="icInfoBackDeepGray" width="16" height="16"/>
         <image name="imgFriendsList" width="40" height="40"/>
         <namedColor name="greyishBrown">
-            <color red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.27799999713897705" green="0.27799999713897705" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="hotPink">
-            <color red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92500001192092896" green="0.0" blue="0.54900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="softPink">
-            <color red="0.97647058823529409" green="0.69803921568627447" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97600001096725464" green="0.69800001382827759" blue="0.86299997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="whiteTwo">
-            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98799997568130493" green="0.98799997568130493" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

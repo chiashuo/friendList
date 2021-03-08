@@ -12,7 +12,9 @@
 @end
 
 @implementation BaseViewController
-
+- (void)dealloc {
+    NSLog(@"%@ dealloc",NSStringFromClass([self class]));
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUp];
